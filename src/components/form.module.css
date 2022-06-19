@@ -49,6 +49,7 @@
   border-radius: 0.25rem;
   background-color: #6147ff;
   cursor: pointer;
+  margin-top: 1rem;
 }
 
 .submitBtn:hover {

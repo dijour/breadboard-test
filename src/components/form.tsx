@@ -106,7 +106,17 @@ const OrderForm = () => {
               <div className={styles["inputGroup__horizontal"]}>
                 <FormInput
                   type="number"
+                  defaultValue={0.1}
                   value={watch("tolerance")}
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  {...register("tolerance", { required: true, min: 0, max: 1 })}
+                />
+
+                <FormInput
+                  type="range"
+                  defaultValue={0.1}
                   min="0"
                   max="1"
                   step="0.01"
@@ -115,14 +125,6 @@ const OrderForm = () => {
                       shouldValidate: true,
                     });
                   }}
-                />
-
-                <FormInput
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  {...register("tolerance", { required: true })}
                 />
               </div>
 
@@ -157,6 +159,21 @@ const OrderForm = () => {
               <div className={styles["inputGroup__horizontal"]}>
                 <FormInput
                   type="number"
+                  defaultValue={0.1}
+                  value={watch("temperature_coefficient")}
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  {...register("temperature_coefficient", {
+                    required: true,
+                    min: 0,
+                    max: 1,
+                  })}
+                />
+
+                <FormInput
+                  type="range"
+                  defaultValue={0.1}
                   value={watch("temperature_coefficient")}
                   min="0"
                   max="1"
@@ -170,15 +187,6 @@ const OrderForm = () => {
                       }
                     );
                   }}
-                />
-
-                <FormInput
-                  type="range"
-                  value={watch("temperature_coefficient")}
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  {...register("temperature_coefficient", { required: true })}
                 />
               </div>
 
